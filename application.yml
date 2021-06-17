@@ -8,4 +8,16 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-
+server:
+  port: 9191
+  #Port 8080 is running keyClock.
+  
+keycloak:
+  realm: Demo-realm
+  auth-server-url: http://localhost:8080/auth
+#  enabled: true
+  ssl-required: external
+  resource: profile-service
+  credentials.secret: 3beb8fb0-7258-4526-8815-39a01e03e3c8
+  use-resource-role-mappings: true
+  bearer-only: true
